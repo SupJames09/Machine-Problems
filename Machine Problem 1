@@ -1,0 +1,211 @@
+#include <iostream>
+#include <conio.h>
+#include <string.h>
+
+using namespace std;
+
+int main()
+{
+	int NStudent = 3;
+	string StudentNames[NStudent];
+	double E1[NStudent] , E2[NStudent] , E3[NStudent] , E4[NStudent] ,E5[NStudent] ,E6[NStudent] ,E7[NStudent] , E8[NStudent] , E9[NStudent] , 
+			ST1[NStudent] ,ST2[NStudent] , ST3[NStudent] , ST4[NStudent] , ST5[NStudent] , ST6[NStudent] , ST7[NStudent] , ST8[NStudent] , ST9[NStudent] ,
+			MP1[NStudent] , MP2[NStudent] , PE[NStudent] , FE[NStudent] , FG[NStudent] , TG[NStudent];
+	
+	char Creators[3][30] = {"James Patrick H. Santos" , "Ryan Villianueva" , "Vinz Adrianne B. Oliveros"};
+	char GradeComponents[5][40] = {"EXPERIMENTS -------------- \t10%" , "SKILLS TEST ------------- \t20%" , "MACHINE PROBLEM ---------- \t20%" , 
+									"PRELIMINARY EXAMINATION -- \t20%" , "FINAL EXAMINATION -------- \t30%"};
+	char Transmutation[9][40] = {"1.00: 95.57 - 100.00" , "1.25: 91.12 - 95.56" , "1.50: 86.68 - 91.11" , "1.75: 82.23 - 86.67" , "2.00: 77.79 - 82.22" , 
+									"2.25: 73.34 - 77.78" , "2.50: 68.90 - 73.33" , "2.75: 64.45 - 68.89" , "3.00: 60.00 - 64.44"};
+	
+	
+	cout << "\t\t\t\t------------ELECTRONIC CLASS RECORD------------\n";
+	
+	cout << "\n\tNowadays, Software Companies are producing classroom management software to aid school instructors\n";
+	cout << "\tor professors in assessing their students' academic performances in class. We have been assigned to\n";
+	cout << "\tcreate our own version of a classroom management software in a form of an electronic class record\n";
+	cout << "\tthat will suit the given specifications:\n";
+		cout << "\t\t\t\t\t\t  A. Input a class of 50 students.\n\t\t\t\t\t\t  B. Input Raw Student Grade in each respective Grade Component.\n";
+		cout << "\n\t\t\t\t\t\t\t Grade Components: \n\t\t\t\t\t\t\t\t\t   ";
+			for (int z = 0; z  < 5; z++)
+			{
+				for(int x = 0; x <40; x++)
+				{
+					cout << GradeComponents[z][x];
+				}
+				cout << "\n\t\t\t\t\t\t\t\t\t   ";
+			}
+		
+		cout << "\n\t\t\t\t\t\t  C. Create a transmuted Final Output based in:\n\t\t\t\t\t\t\t\t\t   ";
+		
+		cout << "'TRANSMUTATION TABLE'\n\t\t\t\t\t\t\t\t\t   ";
+		
+			for (int c = 0; c  < 9; c++)
+			{
+				for(int v = 0; v <40; v++)
+				{
+					cout << Transmutation[c][v];
+				}
+				cout << "\n\t\t\t\t\t\t\t\t\t   ";
+			}
+		
+			cout << "\n\t\t\t\t\t\t  D. Display the top 10 students based on their"; 
+			cout <<	"\n\t\t\t\t\t\t     total equivalent percentage. \n";
+			
+		cout << "\nIn order to provide a 'class output', Here are the steps in this program.\n";
+		cout << "1). Input the Name of the Student.";
+		cout << "\n2). Input the each student's grade for each grade component.";
+		cout << "\n3). Up until you finished updating the grades of 50 students";
+		cout << "\n4). Let the Program calculate final grade of each of the student.";
+		cout << "\n5). See the top 10 Students who has the highest Final Grade";
+		
+		cout << "\n";
+		cout << "\n";
+		
+		for (int b = 0; b < NStudent; b++)
+			{
+			
+				cout << "\n";
+				cout << "Kindly Input the Name of the Student: ";
+				cin >> StudentNames[b];	
+			
+				cout << "\n -- Enter the Grades of the Student per Grade Component -- \n\n";
+				cout << "9 EXPERIMENTS Over 100 per Experiment \n";
+				cout <<"Experiment 1: ";
+					cin >> E1[b]; 
+				cout <<"Experiment 2: "; 
+					cin >> E2[b]; 
+				cout <<"Experiment 3: "; 
+					cin >> E3[b]; 
+				cout <<"Experiment 4: ";   
+					cin >> E4[b]; 
+				cout <<"Experiment 5: ";  
+					cin >> E5[b]; 
+				cout <<"Experiment 6: ";  
+					cin >> E6[b]; 
+				cout <<"Experiment 7: "; 
+					cin >> E7[b]; 
+				cout <<"Experiment 8: "; 
+					cin >> E8[b]; 
+				cout <<"Experiment 9: "; 
+					cin >> E9[b];
+			 
+				cout <<"\n9 SKILLS TEST Over 100 per Skills Test\n";
+				cout <<"Skills Test 1: ";
+					cin >> ST1[b]; 
+				cout <<"Skills Test 2: "; 
+					cin >> ST2[b]; 
+				cout <<"Skills Test 3: "; 
+					cin >> ST3[b]; 
+				cout <<"Skills Test 4: ";   
+					cin >> ST4[b]; 
+				cout <<"Skills Test 5: ";  
+					cin >> ST5[b]; 
+				cout <<"Skills Test 6: ";  
+					cin >> ST6[b]; 
+				cout <<"Skills Test 7: "; 
+					cin >> ST7[b]; 
+				cout <<"Skills Test 8: "; 
+					cin >> ST8[b]; 
+				cout <<"Skills Test 9: "; 
+					cin >> ST9[b];
+			
+				cout <<"\n2 Machine Problem Over 100 per MP\n";
+				cout <<"Machine Problem 1: ";
+					cin >> MP1[b]; 
+				cout <<"Machine Problem 2: "; 
+					cin >> MP2[b]; 
+			
+				cout <<"\n2 Major Examinations Over 100 per EXAM\n";
+				cout <<"Preliminary Examinations: ";
+					cin >> PE[b];
+				cout << "Final Examinations: ";
+					cin >> FE[b]; 
+			
+							FG[b] += E1[b]/90*.10;    
+							FG[b] += E2[b]/90*.10;	 
+							FG[b] += E3[b]/90*.10;   
+							FG[b] += E4[b]/90*.10;
+							FG[b] += E5[b]/90*.10;
+							FG[b] += E6[b]/90*.10;
+							FG[b] += E7[b]/90*.10;
+							FG[b] += E8[b]/90*.10;
+							FG[b] += E9[b]/90*.10;
+								FG[b] += ST1[b]/90*.20;
+								FG[b] += ST2[b]/90*.20;
+								FG[b] += ST3[b]/90*.20;
+								FG[b] += ST4[b]/90*.20;
+								FG[b] += ST5[b]/90*.20;
+								FG[b] += ST6[b]/90*.20;
+								FG[b] += ST7[b]/90*.20;
+								FG[b] += ST8[b]/90*.20;
+								FG[b] += ST9[b]/90*.20;
+									FG[b] += MP1[b]/20*.20;
+									FG[b] += MP2[b]/20*.20;
+										FG[b] += PE[b]/10*.20;
+										FG[b] += FE[b]/10*.30;
+										FG[b] += FG[b]*9;
+								
+		}	
+	for (int n = 0; n < NStudent; n++)
+		{
+			if( FG[n] >= 95.57 )
+			{
+				TG[n] = 1.00;	
+			}
+			else if ( FG[n] <= 95.56 && FG[n] >= 91.12 )
+			{
+				TG[n] = 1.25;
+			}
+			else if ( FG[n] <= 91.11 && FG[n] >= 86.68 )
+			{
+				TG[n] = 1.50;
+			}
+			else if ( FG[n] <= 86.67 && FG[n] >= 82.23 )
+			{
+				TG[n] = 1.75;
+			}
+			else if ( FG[n] <= 82.22 && FG[n] >= 77.79 )
+			{
+				TG[n] = 2.00;
+			}
+			else if ( FG[n] <= 77.78 && FG[n] >= 73.34 )
+			{
+				TG[n] = 2.25;
+			}
+			else if ( FG[n] <= 73.33 && FG[n] >= 68.90 )
+			{
+				TG[n] = 2.50;
+			}
+			else if ( FG[n] <= 68.89 && FG[n] >= 64.45 )
+			{
+				TG[n] = 2.75;
+			}
+			else if ( FG[n] <= 64.44 && FG[n] >= 60.00 )
+			{
+				TG[n] = 3.00;
+			}
+			else
+			{
+				TG[n] = 5.00;
+			}
+		}
+	
+	cout << "\nName\t\tFinal Grade\t\t Transmutation Grade \t\t Passed/Failed\n";
+	for ( int m=0; m < NStudent; m++)
+	{
+		cout << StudentNames[m] << "\t\t" << FG[m] << "\t\t\t\t" << TG[m] << "\t\t\t     ";
+		if (TG[m] < 3.00)
+		{
+			cout << "Passed";
+		}
+		else 
+		{
+			cout << "Failed";
+		}
+		cout << "\n";
+	}
+
+_getch();		
+return 0;	
+}
