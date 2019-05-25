@@ -1,0 +1,119 @@
+/* Create a program that would compute the following values based on the given sides of the triangle. 
+	Let the measurements of the sides be a user-input.
+	
+A. Compute for all interior angles. x
+B. Classify whether scalene, isosceles, or equilateral. x
+C. Determine the area and perimeter. x
+D. Classify whether acute triangle, right triangle, or obtuse triangle. 
+E. Compute for length of apothem and circumcenter. 
+*/
+
+#include <iostream>
+#include<cmath>
+
+using namespace std;
+
+int main()
+{
+	//declaration of variables
+	double hyp,sho,last,perimeter,apo,circ,area,h;
+	int ang1,ang2,ang3;
+	int i,sideA,sideB,sideC,b,p,v,l;
+	//starting questions
+	cout << "Hello, In order to compute the following value based identifiers" << endl;
+	cout << "Kindly input the three (3) given sides of the triangle" << endl;
+	cout << "Longest side ";
+	cin >> hyp; 
+	cout << "Shortest side ";
+	cin >> sho;
+	cout << "Last side ";
+	cin >> last;
+	//formulas
+	b=sho; //base
+	perimeter=hyp+sho+last; //perimeter formula
+	v=hyp/sho; // personal variables
+	p=hyp/last; // personal variables
+	l=sho/last; // personal variables
+	h=2*v; // height formula
+	area=(b*h)/2; // area formula with respect to height
+	ang1=atan(sho/hyp)*(180/M_PI); // angle 1
+	ang2=tan(sho/last)*(180/M_PI); // angle 2
+	ang3=180-(ang1+ang2); // angle 3
+	apo=ang3/2*tan(180/3); // apothem formula
+	circ=(hyp*sho*last)/sqrt((hyp+sho+last)*(sho+last-hyp)*(last+hyp-sho)*(hyp+sho-last)); // circumcenter formula
+	
+	//control statements
+	if (sideA != sideB && sideA != sideC && sideB != sideC) //scalene
+		{
+		cout << "The type of triangle based on the given length sides is: Scalene Triangle" << endl; //type in length
+		cout <<  "The measurement of the interior angle based on the given side is: " << "Angle 1 = " << ang1 << "Angle 2 = " << ang2 << "Angle 3 = " << ang3 << endl; //interior angle
+		cout << "The Area of your Triangle based on it's given side is: " << area << endl; //area
+		cout << "The type of triangle based on its angle: " << endl; // type based on angle
+			{
+					if (ang1<90 && ang2<90 && ang3<90)
+					{
+						cout << "Acute Triangle" << endl;
+					}
+						else if ((ang1>90 && ang2<=90 && ang3<=90) || (ang1<=90 && ang2>90 && ang3<=90) || (ang1<=90 && ang2<=90 && ang3>90))
+					{
+						cout << "Obtuse Triangle" << endl;
+					}
+					else 
+					{
+						cout << "Right Triangle" << endl;
+					}
+			}
+		cout << "The Perimeter of your Triangle based on it's given side is: " << perimeter << endl; //perimeter
+	 	cout << "The Measurement of the Apothem based on it's given side: " << apo <<endl; //apothem
+	 	cout << "The measurement of the Circumcenter based on it's given side: " << circ << endl; // circumcenter
+		}
+		else if (sideA == sideB && sideA == sideC && sideB == sideC) // equilateral
+		{
+		cout << "The type of triangle based on the given length sides is: Equilateral Triangle" << endl; //type in length
+		cout <<  "The measurement of the interior angle based on the given side is: " << "Angle 1 = " << ang1 << "Angle 2 = " << ang2 << "Angle 3 = " << ang3 << endl; //interior angle
+		cout << "The Area of your Triangle based on it's given side is: " << area << endl; //area
+		cout << "The type of triangle based on its angle: " << endl; // type based on angle
+			{
+				if (ang1<90 && ang2<90 && ang3<90)
+				{
+					cout << "Acute Triangle" << endl;
+				}
+					else if ((ang1>90 && ang2<=90 && ang3<=90) || (ang1<=90 && ang2>90 && ang3<=90) || (ang1<=90 && ang2<=90 && ang3>90))
+				{
+					cout << "Obtuse Triangle" << endl;
+				}
+					else 
+				{
+					cout << "Right Triangle" << endl;
+				}
+			}
+		cout << "The Perimeter of your Triangle based on it's given side is: " << endl; //perimeter
+	 	cout << "The Measurement of the Apothem based on it's given side: " << apo << endl; //apothem
+	 	cout << "The measurement of the Circumcenter based on it's given side: " << circ << endl; // circumcenter
+		}
+	else // isoseles
+		{
+		cout << "The type of triangle based on the given length sides is: Isosceles Triangle" << endl; //type in length
+	 	cout <<  "The measurement of the interior angle based on the given side is: " << "Angle 1 = " << ang1 << ", "<< "Angle 2 = " << ang2 << ", " << "Angle 3 = " << ang3 << endl; //interior angle
+	 	cout << "The Area of your Triangle based on it's given side is: " << area << endl; //area
+	 	cout << "The Perimeter of your Triangle based on it's given side is: " << perimeter << endl; //perimeter
+	 	cout << "The type of Angle based on it's given side is: "; // type based on angle
+	 		{
+				if (ang1<90 && ang2<90 && ang3<90)
+				{
+					cout << "Acute Triangle" << endl;
+				}
+					else if ((ang1>90 && ang2<=90 && ang3<=90) || (ang1<=90 && ang2>90 && ang3<=90) || (ang1<=90 && ang2<=90 && ang3>90) )
+				{
+					cout << "Obtuse Triangle" << endl;
+				}
+					else 
+				{
+					cout << "Right Triangle" << endl;
+				}
+			}
+	 	cout << "The Measurement of the Apothem based on it's given side: " << apo << endl; //apothem
+	 	cout << "The measurement of the Circumcenter based on it's given side: " << circ << endl; // circumcenter
+		}
+return 0;
+}
