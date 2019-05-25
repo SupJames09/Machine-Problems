@@ -19,7 +19,7 @@ using namespace std;
 int main()
 {
 	// Initialize Different Variables for the Program
-	int NStudent = 1; // The Class Range = 50;
+	int NStudent = 50; // The Class Range = 50;
 	string StudentNames[NStudent]; // Inputs the Name oof the Students depending on the class range which is 50;
 	double E1[NStudent] , E2[NStudent] , E3[NStudent] , E4[NStudent] ,E5[NStudent] ,E6[NStudent] ,E7[NStudent] , E8[NStudent] , E9[NStudent] , // Experiment 1-9 Scores
 			ST1[NStudent] ,ST2[NStudent] , ST3[NStudent] , ST4[NStudent] , ST5[NStudent] , ST6[NStudent] , ST7[NStudent] , ST8[NStudent] , ST9[NStudent] , // Skills Test 1-9 Scores
